@@ -1,0 +1,123 @@
+/* css/layout.css - App wrappers, main structural grids, and footers */
+
+/* --- Auth Page Layout --- */
+.auth-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto 2em;
+}
+
+/* --- Main App Layout --- */
+#wrapper {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+#header {
+    width: 30%;
+    background: var(--bg-panel);
+    padding: 4em 3em;
+    border-right: solid 1px var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.02);
+    z-index: 10;
+}
+
+#header h1 { margin-bottom: 0.25em; }
+.header-logo { width: 100%; max-width: 220px; height: auto; display: block; }
+#header p {
+    color: var(--accent);
+    font-size: 0.9em;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 3em;
+}
+
+#main {
+    width: 70%;
+    padding: 4em 5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.container { display: none; max-width: 800px; margin: 0 auto; width: 100%; flex: 1; }
+.container.active { display: block; animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+
+.workout-section { margin-bottom: 3.5em; }
+.workout-section h2, #calendar h2 {
+    font-size: 1.1em;
+    color: var(--text-muted);
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 1.5em;
+    display: flex;
+    align-items: center;
+}
+.workout-section h2::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    margin-left: 1em;
+}
+
+/* --- Footer --- */
+#site-footer {
+    margin-top: auto;
+    padding-top: 3em;
+    border-top: solid 1px var(--border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    max-width: 800px;
+    align-self: center;
+}
+
+.footer-links { display: flex; gap: 1.5em; align-items: center; justify-content: center; flex-wrap: wrap; }
+.footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.2s ease; font-size: 0.9em; }
+.footer-links a:hover { color: var(--accent); }
+.footer-links .separator { color: var(--border); }
+
+/* --- Responsive Layout --- */
+@media screen and (max-width: 980px) {
+    #wrapper { flex-direction: column; padding-bottom: 85px; }
+    #header { 
+        width: 100%; 
+        height: auto; 
+        position: relative; 
+        padding: 2em 1.5em; 
+        border-right: none; 
+        border-bottom: solid 1px var(--border); 
+        text-align: center; 
+    }
+    .header-logo { margin: 0 auto; }
+    #header p { margin-bottom: 0; }
+    #main { width: 100%; padding: 3em 1.5em; }
+}
+
+@media screen and (max-width: 480px) {
+    #main { padding: 2em 1em; }
+    .footer-links { flex-direction: column; gap: 0.8em; }
+    .footer-links .separator { display: none; }
+}
