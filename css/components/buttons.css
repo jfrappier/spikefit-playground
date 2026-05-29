@@ -97,8 +97,10 @@
     background: var(--accent); color: white; text-decoration: none;
     padding: 0.6rem 1.25rem; border-radius: 100px; font-weight: 700;
     font-size: 0.9rem; transition: all 0.2s ease; box-shadow: 0 4px 10px rgba(232, 10, 137, 0.2);
+    
+    /* These three lines fix the vertical text clipping */
     display: inline-flex; align-items: center; justify-content: center;
-    line-height: 1.2; margin: 0;
+    line-height: normal; margin: 0; box-sizing: border-box;
 }
 .btn-primary:hover {
     background: var(--accent-hover); transform: translateY(-2px); box-shadow: var(--shadow-lg); color: white;
