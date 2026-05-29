@@ -49,3 +49,25 @@
     .checkbox-container { position: absolute; top: 1.5em; right: 1.25em; margin: 0; }
     .title { padding-right: 2.5em; font-size: 1.1em;}
 }
+
+/* --- Landing Page Cards --- */
+.hero-preview {
+    margin-top: 4rem; width: 100%; max-width: 900px; background: var(--bg-panel);
+    border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1rem;
+    box-shadow: var(--shadow-lg); position: relative;
+}
+.hero-preview img { width: 100%; border-radius: var(--radius-md); border: 1px solid var(--border); }
+
+.bento-card {
+    background: var(--bg-panel); border: 1px solid var(--border); border-radius: var(--radius-lg);
+    padding: 2.5rem; box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; overflow: hidden;
+}
+.bento-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--accent-light); }
+.bento-card h3 { color: var(--text-main); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: none; letter-spacing: normal;}
+
+.icon-wrapper {
+    width: 48px; height: 48px; background: var(--accent-light); color: var(--accent);
+    border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;
+}
+.icon-wrapper svg { width: 24px; height: 24px; }
